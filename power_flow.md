@@ -55,6 +55,8 @@ Fast decoupled load flow
  
   **Power System Analysis & Design – Glover/Sarma**
   - https://elcom-team.com/Subjects/نحليل%20انطمة%20القوى/power-system-analysis-book-(6th-ed).pdf
+ 
+
 
 ---
 
@@ -94,6 +96,7 @@ Solve linear system
 
 
 - https://github.com/soummyaroy1/dc-power-flow?utm_source=chatgpt.com
+- https://github.com/soummyaroy1/dc-power-flow/blob/master/DCPowerFlowEquations.pdf
 
 
 ### Python tools
