@@ -1,4 +1,4 @@
-# Energy System Modelling – Reading & Learning Guide  
+# Energy System Modelling –  Learning Guide  
 
 
 ---
