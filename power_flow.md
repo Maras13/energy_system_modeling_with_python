@@ -1,5 +1,5 @@
 # Energy System Modelling – Reading & Learning Guide  
-*(Tailored for GIS Background)*
+
 
 ---
 
@@ -14,69 +14,87 @@ This guide provides structured resources and a learning path for:
 
 ---
 
-## 🧭 How GIS Skills Translate to Energy Systems
-
-### Existing strengths
-- Spatial thinking → grid topology, transmission networks  
-- Data handling → demand, generation, weather data  
-- Visualization → flows, congestion, price maps  
-
-### Skills to develop
-- Power system physics  
-- Linear algebra & optimization  
-- Electricity market design  
-
----
 
 ## 📚 1. Power Flow Analysis
 
+Core concepts
+
+Kirchhoff’s laws (KCL, KVL)
+Complex power: 
+S=P+jQ
+
+Voltage representation: magnitude + angle
+Bus admittance matrix (Y-bus)
+Types of buses: Slack, PV, PQ
+Nonlinear equations:
+​	
+ 
+Methods to master
+Newton–Raphson (most important)
+Gauss–Seidel (basic intuition)
+Fast decoupled load flow
+👉 These are the core of AC power flow
+
+
+
+
 ### Core textbooks
 
-- *Power System Analysis* – Hadi Saadat  
+- *Power System Analysis* – Hadi Saadat
+- https://dn790008.ca.archive.org/0/items/ebox_ly_EE_EE342/power%20system%20analysis%20-%20hadi%20saadat_320503100.pdf
   - Practical and intuitive  
   - Focus on:
     - Power flow basics  
     - DC approximation  
 
-- *Modern Power System Analysis* – Kundur  
+- *Modern Power System Analysis*
+- https://devanush.github.io/naidu.git.io/PSA/Modern%20Power%20System%20Analysis%20by%20Nagrath%20Kothari.pdf
+- https://www.taylorfrancis.com/books/mono/10.1201/9781003129769/modern-power-system-analysis-chee-wooi-ten-yunhe-hou
   - More advanced  
-  - Recommended for deeper understanding  
+  - Recommended for deeper understanding
+ 
+  **Power System Analysis & Design – Glover/Sarma**
+  - https://elcom-team.com/Subjects/نحليل%20انطمة%20القوى/power-system-analysis-book-(6th-ed).pdf
 
 ---
 
-### Key concepts
-
-- Bus types:
-  - PQ bus  
-  - PV bus  
-  - Slack bus  
-
-- Load flow methods:
-  - Newton–Raphson  
-  - Fast decoupled method  
-
-- Per-unit system  
+Methods to master
+Newton–Raphson (most important)
+Gauss–Seidel (basic intuition)
+Fast decoupled load flow
+👉 These are the core of AC power flow
 
 ---
 
-## ⚡ 2. Basic Principles of Power Flow
+## 
+⚡ 2. DC Power Flow (Simplification you MUST master)
 
-### AC Power Flow Equation
+### DC Power Flow Equation
 
-Where:
-- P = active power injections  
-- B = susceptance matrix  
-- θ = voltage angles  
+This is critical for markets + optimization.
 
----
+Key idea
+DC power flow = linear approximation of AC
 
-### Assumptions
+Assumptions
+Ignore resistance (lossless lines)
+Voltage magnitude = 1 pu
+Small angles → linearization
+Resulting model
 
-- Voltage magnitudes ≈ 1 p.u.  
-- Small angle differences  
-- Ignore reactive power  
+P=Bθ
 
----
+B: susceptance matrix
+θ: voltage angles
+What you must be able to do
+
+Build B matrix
+Choose slack bus
+Solve linear system
+
+
+- https://github.com/soummyaroy1/dc-power-flow?utm_source=chatgpt.com
+
 
 ### Python tools
 
@@ -84,18 +102,17 @@ Where:
 - PyPSA (Python for Power System Analysis)
   - Large-scale modelling  
   - Optimization + market simulation  
-  - Strong integration with spatial data  
+  - Strong integration with spatial data
+ 
+
+  https://www.udemy.com/course/fundamentals-of-power-system-electrical-engineering-part-1/
+  https://www.udemy.com/course/digsilent-powerfactory-power-systems-analysis/
 
 #### Supporting tools
-- pandapower → AC power flow  
-- PYPOWER → academic reference implementation  
+- pandapower → AC power flow   https://www.pandapower.org
+- PYPOWER → https://pypi.org/project/PYPOWER/
 
-#### GIS-related stack
-- geopandas  
-- shapely  
-- xarray  
 
----
 
 ### Typical workflow
 
@@ -114,29 +131,25 @@ Electricity markets are:
 
 > Optimization problems over a spatial network
 
----
-
-### Congestion
-
-When transmission lines are limited:
-- Cheap generation cannot reach demand  
-- Prices differ across locations  
-
----
-
-### Key concept: Locational Marginal Pricing (LMP)
-
-Components:
-- Energy cost  
-- Congestion cost  
-- Losses  
-
----
+Concepts to master
+1. Economic dispatch
+Cheapest generators run first
+2. Congestion
+Lines get full → cannot send cheap power
+3. Locational Marginal Pricing (LMP)
+Price at each node =
+energy cost
+congestion cost
+losses (optional)-
 
 ### Important insight
 
 - No constraints → single price  
-- With constraints → price separation  
+- With constraints → price separation
+
+
+
+- https://arxiv.org/abs/2011.11594?utm_source=chatgpt.com
 
 ---
 
