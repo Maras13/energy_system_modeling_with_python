@@ -353,3 +353,16 @@ To transition from GIS to energy modelling:
 
 ---
 
+Datasets
+
+IEEE Test Systems (14, 30, 118-bus)
+PyPSA European Networks
+ENTSO-E TYNDP Data
+
+Exercises
+
+- 3-bus network PTDF computation
+- DC-OPF model for 5-bus system
+- IEEE 14-bus congestion analysis
+- Cross-border market clearing model
+
