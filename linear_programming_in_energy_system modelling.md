@@ -1,1 +1,4 @@
-
+- Introduction to mathematical optimization in energy systems
+- Formulating linear programming problems (LP) and interpreting results
+- Using Python tools (e.g. Pyomo/Linopy) for modeling and solving optimization cases
+- Hands‑on exercises linking real datasets to optimization problems
