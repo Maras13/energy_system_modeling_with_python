@@ -10,10 +10,26 @@
 
 <img width="600" height="797" alt="Screenshot 2026-04-17 at 15 32 16" src="https://github.com/user-attachments/assets/7c339ccc-6b1b-4e0a-806c-4fbda51d310e" />
 
-## Energy data lessons (new curriculum, weeks 1–3)
+## How to use this module
 
-| Folder | Lesson | Topic |
-|---|---|---|
-| [`06_energy_time_series/`](06_energy_time_series/) | M1.1 | ENTSO-E data for Croatia: API token, time zones and DST, validation, cleaning, resampling power vs. energy |
+**Core path (24-week plan):** the energy lessons below. They assume you already know Python, pandas and Git.
+
+| Folder | Lesson | Topic | Status |
+|---|---|---|---|
+| [`06_energy_time_series/`](06_energy_time_series/) | M1.1 | ENTSO-E data for Croatia: API token, time zones and DST, validation, cleaning, resampling power vs. energy | ready |
+| [`07_pypsa_first_network/`](07_pypsa_first_network/) | M1.2 | First PyPSA network: data model, one-week dispatch, prices, validation, emissions, the LP inside | ready |
+| `08_numerics` | M1.3 | NumPy and SciPy for energy numerics: vectorisation, linear algebra, root finding, Newton's method | planned |
+| `09_generation_and_weather` | M1.4 | Generation mix, weather data, capacity factors, real wind and solar profiles | planned |
+| `10_energy_visualisation` | M1.5 | Plotting energy data: profiles, heatmaps, duration curves, stacked dispatch | planned |
+| `11_project_structure` | M1.6 | Reproducible project layout, environments, tests — start of portfolio project P1 | planned |
+
+**Optional refresher (not part of the 24-week path):** folders `01`–`05` (installation, bash/Jupyter/VS Code,
+Git, general Python from basics to advanced, pandas). They are general data-analytics material without
+energy content, written for learners new to Python. Notes from a review in November 2026:
+
+- They pin older versions (pandas 2.2.3). On current pandas, `05_pandas_intro/01_pandas.ipynb` and
+  `02_datetime.ipynb` raise errors in several cells (e.g. the removed `"T"` frequency alias, changed
+  indexing); some failures are deliberate exercise gaps. Use the pinned `requirements.txt` if you run them.
+- PostgreSQL, pgAdmin and Docker in the setup guides are not needed for the core path.
 
 See [`COURSE_PLAN.md`](../COURSE_PLAN.md) for the full schedule.
