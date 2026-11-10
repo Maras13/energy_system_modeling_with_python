@@ -10,3 +10,10 @@
 
 <img width="600" height="797" alt="Screenshot 2026-04-17 at 15 32 16" src="https://github.com/user-attachments/assets/7c339ccc-6b1b-4e0a-806c-4fbda51d310e" />
 
+## Energy data lessons (new curriculum, weeks 1–3)
+
+| Folder | Lesson | Topic |
+|---|---|---|
+| [`06_energy_time_series/`](06_energy_time_series/) | M1.1 | ENTSO-E data for Croatia: API token, time zones and DST, validation, cleaning, resampling power vs. energy |
+
+See [`COURSE_PLAN.md`](../COURSE_PLAN.md) for the full schedule.
