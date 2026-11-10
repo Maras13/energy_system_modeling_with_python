@@ -18,7 +18,7 @@
 |---|---|---|---|
 | [`06_energy_time_series/`](06_energy_time_series/) | M1.1 | ENTSO-E data for Croatia: API token, time zones and DST, validation, cleaning, resampling power vs. energy | ready |
 | [`07_pypsa_first_network/`](07_pypsa_first_network/) | M1.2 | First PyPSA network: data model, one-week dispatch, prices, validation, emissions, the LP inside | ready |
-| `08_numerics` | M1.3 | NumPy and SciPy for energy numerics: vectorisation, linear algebra, root finding, Newton's method | planned |
+| [`08_numerics/`](08_numerics/) | M1.3 | NumPy and SciPy for energy numerics: vectorisation, sparse linear algebra, why power flow is nonlinear, Newton's method (covers Maths-1.2) | ready |
 | `09_generation_and_weather` | M1.4 | Generation mix, weather data, capacity factors, real wind and solar profiles | planned |
 | `10_energy_visualisation` | M1.5 | Plotting energy data: profiles, heatmaps, duration curves, stacked dispatch | planned |
 | `11_project_structure` | M1.6 | Reproducible project layout, environments, tests — start of portfolio project P1 | planned |
