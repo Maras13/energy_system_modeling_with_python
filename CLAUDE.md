@@ -2,44 +2,67 @@
 
 This repo is a teaching course. Most work here is writing or fixing course material
 (lecture notebooks, exercises, solutions, READMEs), not building a product. Optimise for
-what a student sees: clear explanations, small runnable steps, and results that are correct.
+what a learner sees: clear explanations, small runnable steps, and results that are correct.
 
-## Course flow
-Five modules that build on each other. Later modules reuse functions and data from earlier ones.
+The full schedule, levels and checkpoints are in `COURSE_PLAN.md`. Read it before adding
+material, so new lessons land in the right week and folder.
 
+## Learner profile (shapes every lesson)
+- Strong: Python, pandas, SQL, APIs, data pipelines, Git, visualization. Don't re-teach these.
+- No electrical engineering background: build circuits and power concepts from first principles.
+- Maths studied but rusty: refresh exactly the maths a topic needs, right before it is needed.
+- Studies ~40 h/week; goal is research/professional-level skill and a GitHub portfolio.
+
+## Course structure
 | Folder | Topic | Core tools |
 |---|---|---|
-| `01_python_for_energy_modelling` | setup, bash, Git, Python basics → advanced, pandas | Python, pandas, Jupyter |
-| `02_electricity_markets` | demand, supply curves, merit order, market clearing | pandas, matplotlib |
-| `03_linear_programming` | LP for dispatch, shadow prices, storage, sensitivity | Linopy + HiGHS |
-| `04_power_flow_analysis` | networks, DC power flow, line limits, congestion | PyPSA / Linopy |
-| `05_system_expansions` | capacity expansion, investment vs. operation | PyPSA / Linopy |
+| `00_foundations` | Electrical engineering (EE-1…3) + targeted maths (Maths-1…3) | NumPy, SciPy |
+| `01_python_for_energy_modelling` | Python, data engineering, time series, PyPSA introduction | pandas, PyPSA |
+| `02_electricity_markets` | Merit order, market clearing, European market design | pandas, PyPSA |
+| `03_linear_programming` | LP, duality, unit commitment, storage, rolling horizon | Linopy + HiGHS, PyPSA, Pyomo (comparison) |
+| `04_power_flow_analysis` | Power flow, congestion, nodal prices, reliability, stability | NumPy (own solvers), PyPSA, pandapower, ANDES |
+| `05_system_expansions` | Energy economics, capacity expansion, scenarios | PyPSA |
+| `06_energy_forecasting` | Load, renewable and price forecasting | statsmodels, scikit-learn / gradient boosting |
+| `07_advanced_optimization` | Stochastic, robust, multi-objective, decomposition | Linopy, PyPSA |
+| `08_final_project` | Integrated Croatia / SE-Europe study | all of the above |
 
-The detailed plan for each module lives in that module's `readme.md`. Read it before writing
-material for the module. Some plans are screenshots; if you cannot read them, ask for the text.
+## Case study and data
+- Focus: Croatia and neighbours (HR, SI, HU, BA, RS; IT and AT as price references), within Europe.
+- Data: ENTSO-E Transparency Platform (API), Open Power System Data, Renewables.ninja,
+  PyPSA technology-data, national TSOs and exchanges. Always cite the source and retrieval date.
+- Expect gaps in ENTSO-E data for smaller and non-EU zones; detecting and handling them is part
+  of the teaching, not something to hide.
+
+## PyPSA is the backbone — never a black box
+- One running model grows across modules: single bus → dispatch → opened-up LP → meshed network
+  → investment. Reuse the previous lesson's network where possible.
+- Whenever PyPSA produces a result, show the underlying formulation (Linopy `n.model`) or
+  reproduce it by hand at least once per concept.
+- Be precise about PyPSA's limits: `n.optimize()` uses a linearised network (no voltage
+  magnitudes, no reactive power, no losses by default); AC physics comes from `n.pf()`.
+  PyPSA has no Gauss-Seidel or Fast Decoupled solver (pandapower does; learners also write their own).
 
 ## Teaching approach (keep this consistent)
-- **Build the same model several times, each time more complex.** Module 03 example:
-  pen-and-paper 2-plant LP → same LP in Linopy → 24 h with ramping and storage →
-  sensitivity analysis and a 1-page policy brief.
+- **Build the same model several times, each time more complex.**
 - **Connect every maths concept to an energy concept**: variables = generation,
   objective = total cost, constraints = physical limits, dual of the demand constraint = price.
-- **Show that methods agree** when they should (e.g. LP dispatch == merit-order dispatch
-  for a single hour without extra constraints). Students trust the solver when they see this.
+- **Show that methods agree** when they should, and explain why they differ when they don't.
+- First principles: derive, then a worked example by hand, then code, then validation.
+- Every notebook validates its own results (units, energy balance, a reference value).
 
 ## Conventions
-- Lecture notebooks: numbered, e.g. `02_lp_in_linopy.ipynb`. Exercises go in an `exercise/`
-  subfolder next to the lecture, with matching numbers. Solutions in `exercise/solutions/`.
+- Lecture notebooks are numbered (`01_ee1_circuits_from_zero.ipynb`). Exercises go in an `exercise/`
+  subfolder with matching names; solutions in `exercise/solutions/<name>_solution.ipynb`.
 - Single-digit numbers always get a leading zero (`04`, not `4`).
 - Units: MW for power, MWh for energy, €/MWh for prices and marginal costs, € for total cost,
-  hours for time steps. Say the unit in every axis label, column name, and printed result.
-- Solver: HiGHS (`pip install highspy`), called via `model.solve(solver_name="highs")`.
-- Data: small, hand-made, or clearly sourced. Put files in a `data/` folder in the module;
-  never hard-code an absolute path.
+  hours for time steps; V, A, Ω, S, W in the foundations. Say the unit in every label and printout.
+- Solver: HiGHS (`pip install highspy`), called via `solve(solver_name="highs")`.
+- Data: small and transparent in lessons; real data in projects, in a `data/` folder; never
+  hard-code an absolute path.
 - Language: English, friendly, second person ("you"), short paragraphs.
 
 ## Skills in this repo (`.claude/skills/`)
-- `esm-lecture-builder` – turn a module plan into a lecture notebook in the course style.
+- `esm-lecture-builder` – turn a plan into a lecture notebook in the course style.
 - `esm-exercise-builder` – write an exercise notebook + solution and prove the solution runs.
 - `esm-model-checker` – solve a small dispatch/expansion case and sanity-check the results.
 
