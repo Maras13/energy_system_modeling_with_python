@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="350" viewBox="0 0 680 350" role="img" font-family="Helvetica, Arial, sans-serif">
+  <title>Two-node DC circuit</title>
+  <desc>A 3 A current source injects into node 1. R10 = 4 ohm connects node 1 to the reference node, R12 = 2 ohm connects node 1 and node 2, R20 = 4 ohm connects node 2 to the reference node.</desc>
+  <rect width="680" height="350" fill="#ffffff"/>
+  <g stroke="#444441" stroke-width="1.5" fill="none">
+    <path d="M120 80 L370 80"/><path d="M450 80 L520 80"/>
+    <path d="M120 80 L120 168"/><path d="M120 212 L120 300"/>
+    <path d="M300 80 L300 150"/><path d="M300 230 L300 300"/>
+    <path d="M520 80 L520 150"/><path d="M520 230 L520 300"/>
+    <path d="M120 300 L520 300"/>
+  </g>
+  <circle cx="120" cy="190" r="22" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1.5"/>
+  <path d="M120 204 L120 178 M114 184 L120 177 L126 184" stroke="#0F6E56" stroke-width="1.8" fill="none"/>
+  <g fill="#FAEEDA" stroke="#854F0B" stroke-width="1.2">
+    <rect x="370" y="70" width="80" height="20" rx="3"/>
+    <rect x="290" y="150" width="20" height="80" rx="3"/>
+    <rect x="510" y="150" width="20" height="80" rx="3"/>
+  </g>
+  <g fill="#444441">
+    <circle cx="300" cy="80" r="4"/><circle cx="520" cy="80" r="4"/>
+    <circle cx="300" cy="300" r="4"/><circle cx="520" cy="300" r="4"/>
+  </g>
+  <g fill="#2C2C2A" font-size="14">
+    <text x="86" y="195" text-anchor="end" font-weight="bold">3 A</text>
+    <text x="300" y="58" text-anchor="middle" font-weight="bold">Node 1</text>
+    <text x="545" y="85" font-weight="bold">Node 2</text>
+  </g>
+  <g fill="#5F5E5A" font-size="13">
+    <text x="410" y="58" text-anchor="middle">R12 = 2 Ω</text>
+    <text x="320" y="195">R10 = 4 Ω</text>
+    <text x="540" y="195">R20 = 4 Ω</text>
+    <text x="320" y="330" text-anchor="middle">Reference node 0 (V = 0)</text>
+  </g>
+</svg>
