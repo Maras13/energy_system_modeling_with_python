@@ -20,7 +20,7 @@
 | [`07_pypsa_first_network/`](07_pypsa_first_network/) | M1.2 | First PyPSA network: data model, one-week dispatch, prices, validation, emissions, the LP inside | ready |
 | [`08_numerics/`](08_numerics/) | M1.3 | NumPy and SciPy for energy numerics: vectorisation, sparse linear algebra, why power flow is nonlinear, Newton's method (covers Maths-1.2) | ready |
 | [`09_generation_and_weather/`](09_generation_and_weather/) | M1.4 | From weather to power: capacity factors, wind cube law and power curves, Weibull statistics, solar position and clear-sky PV, real ERA5 weather from Open-Meteo, PyPSA `p_max_pu` profiles | ready |
-| `10_energy_visualisation` | M1.5 | Plotting energy data: profiles, heatmaps, duration curves, stacked dispatch | planned |
+| [`10_energy_visualisation/`](10_energy_visualisation/) | M1.5 | Visualising energy data: plot conventions, seasonal daily profiles, DST-safe heatmaps, load and residual-load duration curves, stacked dispatch with prices, price vs. residual load, saving figures | ready |
 | `11_project_structure` | M1.6 | Reproducible project layout, environments, tests — start of portfolio project P1 | planned |
 
 **Optional refresher (not part of the 24-week path):** folders `01`–`05` (installation, bash/Jupyter/VS Code,
