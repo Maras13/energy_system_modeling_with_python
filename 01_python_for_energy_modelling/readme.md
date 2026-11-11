@@ -21,7 +21,9 @@
 | [`08_numerics/`](08_numerics/) | M1.3 | NumPy and SciPy for energy numerics: vectorisation, sparse linear algebra, why power flow is nonlinear, Newton's method (covers Maths-1.2) | ready |
 | [`09_generation_and_weather/`](09_generation_and_weather/) | M1.4 | From weather to power: capacity factors, wind cube law and power curves, Weibull statistics, solar position and clear-sky PV, real ERA5 weather from Open-Meteo, PyPSA `p_max_pu` profiles | ready |
 | [`10_energy_visualisation/`](10_energy_visualisation/) | M1.5 | Visualising energy data: plot conventions, seasonal daily profiles, DST-safe heatmaps, load and residual-load duration curves, stacked dispatch with prices, price vs. residual load, saving figures | ready |
-| `11_project_structure` | M1.6 | Reproducible project layout, environments, tests — start of portfolio project P1 | planned |
+| [`11_project_structure/`](11_project_structure/) | M1.6 | Reproducible projects: src layout, validated config, physics tests and mutation testing, CLI, environments, data provenance, README — with a working template | ready |
+
+**Portfolio project P1** (weeks 2–3): [`PROJECT_P1.md`](PROJECT_P1.md) — Croatian electricity from data to a first dispatch model, built on the M1.6 template.
 
 **Optional refresher (not part of the 24-week path):** folders `01`–`05` (installation, bash/Jupyter/VS Code,
 Git, general Python from basics to advanced, pandas). They are general data-analytics material without

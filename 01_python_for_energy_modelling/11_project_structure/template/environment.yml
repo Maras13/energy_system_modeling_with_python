@@ -1,0 +1,16 @@
+# Conda environment for the project. Create with:  conda env create -f environment.yml
+# Pin minimum versions here; record the exact versions you ran with in your README (pip freeze).
+name: hr-energy
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - numpy>=2.0
+  - pandas>=2.2
+  - pyyaml>=6.0
+  - pytest>=8
+  - pip
+  - pip:
+      - pypsa>=1.0
+      - highspy>=1.7
+      - -e .

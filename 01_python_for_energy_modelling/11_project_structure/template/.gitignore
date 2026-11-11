@@ -1,0 +1,18 @@
+# secrets
+.env
+
+# data you can re-download (keep data/README.md and the .gitkeep files)
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# generated outputs
+results/*
+!results/.gitkeep
+
+# Python
+__pycache__/
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
