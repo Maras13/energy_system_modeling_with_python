@@ -1,0 +1,23 @@
+# Every number the model uses lives here, with its unit. Change scenarios here, not in code.
+name: base
+
+snapshots:
+  start: "2025-01-13"     # UTC, interval start
+  hours: 168
+
+load:
+  source: synthetic       # "synthetic" (offline) or a CSV path under data/processed/
+  mean_MW: 2100
+  daily_amplitude_MW: 380
+  weekend_drop_MW: 200
+  seed: 1
+
+generators:               # p_nom in MW, marginal_cost in EUR/MWh, p_max_pu as constant availability
+  nuclear_share: {carrier: nuclear, p_nom: 350,  marginal_cost: 10}
+  hydro_ror:     {carrier: hydro,   p_nom: 1500, marginal_cost: 2,   p_max_pu: 0.45}
+  coal:          {carrier: coal,    p_nom: 210,  marginal_cost: 95}
+  gas_ccgt:      {carrier: gas,     p_nom: 700,  marginal_cost: 110}
+  gas_ocgt:      {carrier: gas,     p_nom: 300,  marginal_cost: 160}
+  imports:       {carrier: imports, p_nom: 1500, marginal_cost: 120}
+
+solver: highs
