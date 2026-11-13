@@ -57,6 +57,10 @@ material, so new lessons land in the right week and folder.
 - Units: MW for power, MWh for energy, €/MWh for prices and marginal costs, € for total cost,
   hours for time steps; V, A, Ω, S, W in the foundations. Say the unit in every label and printout.
 - Solver: HiGHS (`pip install highspy`), called via `solve(solver_name="highs")`.
+- Environment: `requirements.txt` at the repo root is the tested course-wide environment. pandapower
+  requires pandas ~=2.3 and PyPSA >= 1.3 requires pandas >= 3, so the course uses PyPSA 1.2.x with
+  pandas 2.3. Check a fresh install with `pip install --dry-run -r requirements.txt` and re-run all
+  notebooks and the M1.6 template tests before changing any pin.
 - Data: small and transparent in lessons; real data in projects, in a `data/` folder; never
   hard-code an absolute path.
 - Language: English, friendly, second person ("you"), short paragraphs.

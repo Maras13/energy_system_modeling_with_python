@@ -11,10 +11,12 @@ and maths that was studied but is rusty.
 | Maths-1.2 → taught in [M1.3](../01_python_for_energy_modelling/08_numerics/) | 2 | Newton's method in one and many dimensions, Jacobians, constant-power loads, voltage collapse | AC power flow (M4) |
 | `03_ee2_1_ac_phasors_impedance` | 2 | AC and RMS values, phasors as complex numbers, impedance of R, L and C, phasors validated against a time-domain simulation, resonance, the complex admittance matrix (Y-bus), why lines turn voltage angles | Y-bus, AC power flow, DC approximation (M4) |
 | `04_ee2_2_active_reactive_complex_power` | 2 | Instantaneous power, active/reactive/apparent power, S = V·I*, power factor and its correction, conservation of complex power, power transfer P = V₁V₂ sin δ / X, accuracy of the DC approximation, P–δ and Q–V coupling | DC power flow, PTDFs (M4), market coupling (M2), voltage control (M4) |
-| EE-2.3 | 3 | The two-bus AC power flow: PQ and PV buses, solving the power equations with Newton's method, voltage control | AC power flow (M4) |
+| `05_ee2_3_ac_power_flow` | 3 | Bus types (slack, PQ, PV), the AC power flow equations, Newton's method checked against pandapower, the P–V curve and loadability limit, voltage control with a PV bus and its reactive power limit | AC power flow, voltage stability (M4) |
 | Maths-2 | 4–5 | LP geometry, vertices, duality | M3 |
 | EE-3.1–3.3 | 4–7 | Three-phase, per-unit, transmission line models, the Y-bus | M4 |
 | Maths-3 | 6–7 | Lagrangians, KKT conditions | M3, M4 (nodal prices) |
 
 Each lesson: lecture notebook in this folder, exercises in `exercise/`, answer key in
 `exercise/solutions/` (submit your own answers before opening it).
+
+Setup: `pip install -r requirements.txt` from the repo root (EE-2.3 onwards uses pandapower).
