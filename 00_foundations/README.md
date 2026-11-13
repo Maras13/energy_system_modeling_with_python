@@ -15,7 +15,7 @@ and maths that was studied but is rusty.
 | Maths-2 | 4–5 | LP geometry, vertices, duality | M3 |
 | `06_ee3_1_three_phase_per_unit` | 4 | Balanced three-phase systems, phase and line-to-line voltages, constant three-phase power, why three phases save conductor material, the per-phase equivalent (why V_LL²/Z* is three-phase power), the per-unit system, base changes, transformers in per-unit checked against pandapower | Network data, pandapower and PyPSA models (M4) |
 | `07_ee3_2_transmission_line_models` | 5 | Line parameters of overhead lines and cables, the nominal π model and ABCD two-ports, line charging (why long AC cables need HVDC), the Ferranti effect checked against pandapower, surge impedance loading, shunt reactors, the exact long-line model and its equivalent π | Line data in pandapower and PyPSA, voltage control (M4) |
-| EE-3.3 | 6–7 | Transformers with tap changers and phase shifters, building the Y-bus of a real network from data | M4 |
+| `08_ee3_3_transformers_and_ybus` | 6 | Off-nominal tap ratios and their Y-bus entries, tap changers for voltage control (and a silent pandapower configuration trap), phase-shifting transformers steering flows, the Y-bus of a two-level network built from data tables and matched entry by entry with pandapower | AC power flow on real networks, congestion and PSTs (M4) |
 | Maths-3 | 6–7 | Lagrangians, KKT conditions | M3, M4 (nodal prices) |
 
 Each lesson: lecture notebook in this folder, exercises in `exercise/`, answer key in
