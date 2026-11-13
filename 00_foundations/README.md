@@ -14,7 +14,8 @@ and maths that was studied but is rusty.
 | `05_ee2_3_ac_power_flow` | 3 | Bus types (slack, PQ, PV), the AC power flow equations, Newton's method checked against pandapower, the P–V curve and loadability limit, voltage control with a PV bus and its reactive power limit | AC power flow, voltage stability (M4) |
 | Maths-2 | 4–5 | LP geometry, vertices, duality | M3 |
 | `06_ee3_1_three_phase_per_unit` | 4 | Balanced three-phase systems, phase and line-to-line voltages, constant three-phase power, why three phases save conductor material, the per-phase equivalent (why V_LL²/Z* is three-phase power), the per-unit system, base changes, transformers in per-unit checked against pandapower | Network data, pandapower and PyPSA models (M4) |
-| EE-3.2–3.3 | 5–7 | Transmission line models (π model, line charging, Ferranti effect), transformers with tap changers, building the Y-bus of real networks | M4 |
+| `07_ee3_2_transmission_line_models` | 5 | Line parameters of overhead lines and cables, the nominal π model and ABCD two-ports, line charging (why long AC cables need HVDC), the Ferranti effect checked against pandapower, surge impedance loading, shunt reactors, the exact long-line model and its equivalent π | Line data in pandapower and PyPSA, voltage control (M4) |
+| EE-3.3 | 6–7 | Transformers with tap changers and phase shifters, building the Y-bus of a real network from data | M4 |
 | Maths-3 | 6–7 | Lagrangians, KKT conditions | M3, M4 (nodal prices) |
 
 Each lesson: lecture notebook in this folder, exercises in `exercise/`, answer key in
