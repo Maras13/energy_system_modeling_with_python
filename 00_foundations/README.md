@@ -13,7 +13,8 @@ and maths that was studied but is rusty.
 | `04_ee2_2_active_reactive_complex_power` | 2 | Instantaneous power, active/reactive/apparent power, S = V·I*, power factor and its correction, conservation of complex power, power transfer P = V₁V₂ sin δ / X, accuracy of the DC approximation, P–δ and Q–V coupling | DC power flow, PTDFs (M4), market coupling (M2), voltage control (M4) |
 | `05_ee2_3_ac_power_flow` | 3 | Bus types (slack, PQ, PV), the AC power flow equations, Newton's method checked against pandapower, the P–V curve and loadability limit, voltage control with a PV bus and its reactive power limit | AC power flow, voltage stability (M4) |
 | Maths-2 | 4–5 | LP geometry, vertices, duality | M3 |
-| EE-3.1–3.3 | 4–7 | Three-phase, per-unit, transmission line models, the Y-bus | M4 |
+| `06_ee3_1_three_phase_per_unit` | 4 | Balanced three-phase systems, phase and line-to-line voltages, constant three-phase power, why three phases save conductor material, the per-phase equivalent (why V_LL²/Z* is three-phase power), the per-unit system, base changes, transformers in per-unit checked against pandapower | Network data, pandapower and PyPSA models (M4) |
+| EE-3.2–3.3 | 5–7 | Transmission line models (π model, line charging, Ferranti effect), transformers with tap changers, building the Y-bus of real networks | M4 |
 | Maths-3 | 6–7 | Lagrangians, KKT conditions | M3, M4 (nodal prices) |
 
 Each lesson: lecture notebook in this folder, exercises in `exercise/`, answer key in
