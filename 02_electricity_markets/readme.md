@@ -23,6 +23,6 @@ Weeks 4–5 of the course plan (about 80 hours). Prerequisites: M1.2 (dispatch i
 | Folder | Lesson | Topic | Status |
 |---|---|---|---|
 | [`01_market_clearing/`](01_market_clearing/) | M2.1 | Order books, supply and demand curves, uniform-price clearing, welfare maximisation and its dual, consumer and producer surplus, demand bids in PyPSA | ready |
-| `02_price_formation` | M2.2 | Merit-order effect of renewables, cannibalisation, negative prices, carbon pricing and fuel switching | planned |
+| [`02_price_formation/`](02_price_formation/) | M2.2 | A synthetic year cleared hour by hour (checked against PyPSA in all 8,760 hours), merit-order effect, capture prices and cannibalisation, negative prices and support rules, carbon pricing and fuel switching | ready |
 | `03_european_market_design` | M2.3 | Day-ahead and intraday markets, bidding zones, market coupling, real HR/SI/HU prices (ENTSO-E) | planned |
 | P2 brief | P2 | South-East Europe market simulation and price comparison | planned |
