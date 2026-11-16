@@ -44,7 +44,7 @@ PyPSA's objective and prices with your own Linopy model to 10⁻⁶ — lesson 3
 | 1 · pen and paper | The two-plant LP on graph paper — taught in [Maths-2](../00_foundations/09_maths2_lp_geometry_duality.ipynb) (feasible region, vertices, duals, degeneracy) | ready |
 | `02_lp_in_linopy` | The two-plant dispatch LP in Linopy; the merit order solves the same LP; the price as a shadow price | ready |
 | `03_multi_period_dispatch` | 24 hours in Linopy: without coupling = 24 merit orders; ramp limits (anticipation, curtailment, prices that are no plant's marginal cost, decomposed with KKT); a cyclic battery; own model = PyPSA to 10⁻⁶ | ready |
-| 4 · inside PyPSA | PyPSA's optimisation model (`n.model`), custom constraints, a Pyomo comparison | planned |
+| `04_inside_pypsa` | PyPSA's optimisation model (`n.model`) mapped to lesson 3's own model; reading duals from it; a custom take-or-pay constraint with `extra_functionality`; the same LP in Pyomo; Linopy vs Pyomo on a full year | ready |
 | 5 · using the model | Sensitivity and scenario analysis, a one-page policy brief | planned |
 | 6–9 · operations | Unit commitment (MILP), reservoirs and pumped hydro, demand response, rolling horizon | planned |
 | P3 | Portfolio project: dispatch optimisation, PyPSA reproduced by hand | planned |
