@@ -31,3 +31,23 @@ Week 1 is entirely pen-and-paper. Students solve a 2-plant dispatch LP by drawin
 Week 2 translates that same problem into Linopy code. The big reveal is that students run their LP dispatch and their Module 2 merit_order_dispatch() side by side — the results are identical. This shows that the merit order was secretly solving an LP all along. With Linopy, you can create optimization models within Python that consist of decision variables, constraints, and optimization objectives, then solve using a variety of commercial and open-source solvers Fneum. HiGHS is the recommended solver — free, fast, and installs with a single pip command.
 Week 3 is where LP pulls ahead of the merit order. Students extend to 24 hours and add two things the greedy approach can't handle: ramp rate limits (coal can't jump from 0 to full output in one hour) and battery storage (charge during cheap hours, discharge during expensive ones). The crucial concept is shadow prices — the dual value of each hour's demand constraint is the electricity price, derived mathematically rather than from the merit-order heuristic.
 Week 4 teaches students to use the model rather than just build it. They run sensitivity analysis: what happens to costs, prices, and emissions when you add 5 GW of solar? Remove lignite? Double battery capacity? The exercise ends with a 1-page policy brief — forcing students to translate optimization results into actionable insights.
+
+## How to use this module
+
+Weeks 6–9 of the course plan: linear programming (weeks 6–7) and operations and storage (weeks 8–9).
+Prerequisites: Maths-2 (LP geometry and duality) and Maths-3 (KKT conditions). Setup:
+`pip install -r requirements.txt` from the repo root. The week-9 checkpoint asks you to reproduce
+PyPSA's objective and prices with your own Linopy model to 10⁻⁶ — lesson 3 shows how.
+
+| Lesson | Topic | Status |
+|---|---|---|
+| 1 · pen and paper | The two-plant LP on graph paper — taught in [Maths-2](../00_foundations/09_maths2_lp_geometry_duality.ipynb) (feasible region, vertices, duals, degeneracy) | ready |
+| `02_lp_in_linopy` | The two-plant dispatch LP in Linopy; the merit order solves the same LP; the price as a shadow price | ready |
+| `03_multi_period_dispatch` | 24 hours in Linopy: without coupling = 24 merit orders; ramp limits (anticipation, curtailment, prices that are no plant's marginal cost, decomposed with KKT); a cyclic battery; own model = PyPSA to 10⁻⁶ | ready |
+| 4 · inside PyPSA | PyPSA's optimisation model (`n.model`), custom constraints, a Pyomo comparison | planned |
+| 5 · using the model | Sensitivity and scenario analysis, a one-page policy brief | planned |
+| 6–9 · operations | Unit commitment (MILP), reservoirs and pumped hydro, demand response, rolling horizon | planned |
+| P3 | Portfolio project: dispatch optimisation, PyPSA reproduced by hand | planned |
+
+Each lesson: lecture notebook in this folder, exercises in `exercise/`, answer key in
+`exercise/solutions/` (submit your own answers before opening it).
