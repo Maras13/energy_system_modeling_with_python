@@ -3,7 +3,7 @@
 
 
 
-- Data Science for Energy System Modelling: https://www.youtube.com/@fabianneumann5386
+- Data Science for Energy System Modelling: https://www.youtube.com/@fabianneumann5386 — mapped to this course's modules, video by video, in [`FURTHER_LEARNING.md`](FURTHER_LEARNING.md)
 
 
 
