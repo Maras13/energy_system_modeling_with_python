@@ -47,3 +47,14 @@ def load_data(seed: int = 11) -> pd.DataFrame:
         noise[t] = 0.9 * noise[t - 1] + z[t]
     demand = (1950 + 38 * heating + 70 * cooling) * profile * tourism + noise
     return pd.DataFrame({"temperature": temperature, "holiday": holiday, "demand": demand}, index=idx)
+
+
+def temperature_forecast(df: pd.DataFrame, seed: int = 5) -> pd.Series:
+    """Day-ahead temperature forecast (deg C) as available at noon the day before: the actual temperature
+    plus a forecast error of about 1.3 deg C on average that persists over hours and days."""
+    rng = np.random.default_rng(seed)
+    error = np.zeros(len(df))
+    shocks = rng.normal(0, 0.5, len(df))
+    for t in range(1, len(df)):
+        error[t] = 0.95 * error[t - 1] + shocks[t]
+    return pd.Series(df["temperature"].to_numpy() + error, index=df.index, name="temperature_forecast")
