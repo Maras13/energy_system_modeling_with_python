@@ -48,7 +48,8 @@ PyPSA's objective and prices with your own Linopy model to 10⁻⁶ — lesson 3
 | `05_using_the_model` | A full synthetic year as an analysis tool: resource cost vs carbon payments vs consumer cost, one-at-a-time sensitivity (tornado), policy scenarios and abatement costs, interactions between measures, a one-page policy brief generated from the results | ready |
 | `06_unit_commitment` | Binary on/off decisions as a MILP: minimum stable output, start-up costs, the integrality gap, PyPSA's committable generators (and their silent zero prices), pricing from the fixed-commitment LP, uplift | ready |
 | `07_hydro_reservoirs` | A reservoir with inflow, level and spillage; the water value as the dual of the water balance and as the hydro operator's bid; why a zero-cost offer misuses water; pumped storage, its break-even price and its competition with the reservoir | ready |
-| 8–9 · operations | Demand response, rolling horizon | planned |
+| `08_demand_response` | Price-responsive demand as load reduction offered at the willingness to pay; scarcity pricing and VOLL in a stressed week (infeasible without demand response); scarcity rents; load shifting as a lossless store of delayed demand, compared with pumped storage | ready |
+| 9 · rolling horizon | Operating day by day with limited foresight | planned |
 | P3 | Portfolio project: dispatch optimisation, PyPSA reproduced by hand | planned |
 
 Each lesson: lecture notebook in this folder, exercises in `exercise/`, answer key in
