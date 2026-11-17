@@ -17,7 +17,7 @@ and are skipped without one.
 | Lesson | Topic | Status |
 |---|---|---|
 | `01_forecasting_basics` | Splitting in time, what is known at noon (the day-ahead information set and its leaks), persistence / seasonal-naive / climatology baselines, MAE, RMSE, bias, MAPE and MASE, errors by hour and on holidays, the TSO's forecast as a benchmark | ready |
-| 2 · statistical models | Regression on temperature and calendar, SARIMA, residual diagnostics | planned |
+| `02_statistical_models` | Regression on calendar and a temperature forecast (spline response), the weather leak, residual diagnostics and error correction by lead time, SARIMA compared with the weather regression | ready |
 | 3 · machine learning | Gradient boosting, feature engineering, leakage through features, cross-validation in time | planned |
 | 4 · probabilistic forecasts | Quantiles and prediction intervals, pinball loss and coverage; solar, wind and price forecasts | planned |
 | 5 · forecasts in operations | What forecast errors cost in dispatch (Module 03), reserves and the value of a better forecast | planned |
