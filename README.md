@@ -16,3 +16,5 @@
 The full 24-week plan (~950 hours, three competence levels, six portfolio projects, Croatia and South-East Europe as the case study) is in [`COURSE_PLAN.md`](COURSE_PLAN.md).
 
 Start with [`00_foundations/`](00_foundations/) (electrical engineering and maths) alongside [`01_python_for_energy_modelling/`](01_python_for_energy_modelling/).
+
+Weeks 10–11 are the forecasting module in [`06_energy_forecasting/`](06_energy_forecasting/), followed by Assessment 1 in [`assessments/`](assessments/).
