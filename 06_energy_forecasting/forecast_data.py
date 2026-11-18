@@ -84,3 +84,27 @@ def solar_data(df: pd.DataFrame, capacity: float = 1500.0, seed: int = 23) -> pd
     forecast_index = np.clip(np.repeat(np.clip(daily_index + rng.normal(0, 0.15, days), 0.05, 1), 24), 0.05, 1)
     return pd.DataFrame({"solar": capacity * 0.9 * clear_sky * actual_index,
                          "solar_forecast": capacity * 0.9 * clear_sky * forecast_index}, index=idx)
+
+
+# Illustrative supply stack (MW, EUR/MWh): must-run renewables, nuclear share, two reservoir-hydro blocks offered at
+# their water values (Module 03, lesson 7), gas, coal, imports, older gas, peakers, then scarcity.
+SUPPLY_STACK = [(500, 0.0), (350, 12.0), (400, 45.0), (400, 70.0), (400, 89.1), (300, 94.2), (300, 104.1),
+                (300, 118.0), (400, 128.9), (100_000, 300.0)]
+
+
+def merit_order_price(residual_demand) -> np.ndarray:
+    """Price (EUR/MWh) set by the marginal block of SUPPLY_STACK at the given residual demand (MW)."""
+    cumulative = np.cumsum([capacity for capacity, _ in SUPPLY_STACK])
+    cost = np.array([price for _, price in SUPPLY_STACK])
+    return cost[np.searchsorted(cumulative, np.clip(np.asarray(residual_demand, float), 0, None))]
+
+
+def market_price(residual_demand: pd.Series, seed: int = 31) -> pd.Series:
+    """Hourly day-ahead price (EUR/MWh): the merit-order price of residual demand (demand minus solar) plus
+    small persistent deviations (bidding, outages, neighbours). Illustrative."""
+    rng = np.random.default_rng(seed)
+    deviation = np.zeros(len(residual_demand))
+    shocks = rng.normal(0, 3, len(residual_demand))
+    for t in range(1, len(residual_demand)):
+        deviation[t] = 0.8 * deviation[t - 1] + shocks[t]
+    return pd.Series(merit_order_price(residual_demand) + deviation, index=residual_demand.index, name="price")

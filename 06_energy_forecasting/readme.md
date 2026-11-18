@@ -20,7 +20,7 @@ and are skipped without one.
 | `02_statistical_models` | Regression on calendar and a temperature forecast (spline response), the weather leak, residual diagnostics and error correction by lead time, SARIMA compared with the weather regression | ready |
 | `03_machine_learning` | Gradient boosting with honest lag features and an availability test, leakage through features (and why importance does not detect it), shuffled vs time-ordered validation, a regression–boosting ensemble | ready |
 | `04_probabilistic_forecasts` | Prediction intervals from honest past errors, calibration overall and by month, quantile boosting and conformal calibration, the pinball loss; solar forecasts whose uncertainty follows the sun | ready |
-| 5 · forecasts in operations | What forecast errors cost in dispatch (Module 03), reserves and the value of a better forecast | planned |
+| `05_forecasts_in_operations` | Imbalance costs of forecast errors in € per year, buying the cost-minimising quantile (the newsvendor rule), a fundamental merit-order price forecast, and what price forecasts are worth to a battery — where accuracy and value part ways | ready |
 | Assessment 1 | Week 11: review of Modules 01–03 and this module | planned |
 
 Each lesson: lecture notebook in this folder, exercises in `exercise/`, answer key in
