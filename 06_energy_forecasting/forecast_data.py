@@ -58,3 +58,29 @@ def temperature_forecast(df: pd.DataFrame, seed: int = 5) -> pd.Series:
     for t in range(1, len(df)):
         error[t] = 0.95 * error[t - 1] + shocks[t]
     return pd.Series(df["temperature"].to_numpy() + error, index=df.index, name="temperature_forecast")
+
+
+def solar_data(df: pd.DataFrame, capacity: float = 1500.0, seed: int = 23) -> pd.DataFrame:
+    """Hourly solar output (MW) of a Croatia-sized fleet and its day-ahead forecast (MW).
+
+    Output follows the sun's elevation at 45.3 deg N, scaled by a clear-sky index that persists for days and is
+    higher in summer; the forecast knows the sun exactly but misjudges each day's cloudiness. Illustrative."""
+    rng = np.random.default_rng(seed)
+    idx = df.index
+    doy, hour = idx.dayofyear.to_numpy(), idx.hour.to_numpy() + 0.5
+    decl = np.radians(23.44 * np.sin(np.radians(360 * (284 + doy) / 365)))
+    lat = np.radians(45.3)
+    sin_elevation = np.sin(lat) * np.sin(decl) + np.cos(lat) * np.cos(decl) * np.cos(np.radians(15 * (hour - 12)))
+    clear_sky = np.clip(sin_elevation, 0, None)
+
+    days = len(idx) // 24
+    weather = np.zeros(days)
+    shocks = rng.normal(0, 1, days)
+    for d in range(1, days):
+        weather[d] = 0.6 * weather[d - 1] + shocks[d]
+    season = np.cos(2 * np.pi * (np.arange(days) % 365 - 196) / 365)
+    daily_index = 1 / (1 + np.exp(-(weather + 0.9 + 1.6 * season)))          # clear-sky index of each day, 0..1
+    actual_index = np.clip(np.repeat(daily_index, 24) + rng.normal(0, 0.08, len(idx)), 0.05, 1)
+    forecast_index = np.clip(np.repeat(np.clip(daily_index + rng.normal(0, 0.15, days), 0.05, 1), 24), 0.05, 1)
+    return pd.DataFrame({"solar": capacity * 0.9 * clear_sky * actual_index,
+                         "solar_forecast": capacity * 0.9 * clear_sky * forecast_index}, index=idx)
