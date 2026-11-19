@@ -21,5 +21,25 @@
 
 <img width="607" height="1207" alt="Screenshot 2026-04-17 at 15 47 10" src="https://github.com/user-attachments/assets/5594f1f5-8c7a-4126-9811-1bcbb5335078" />
 
+## How to use this module
 
+Weeks 12–15 of the course plan: networks and reliability. Prerequisites: the foundations track — EE-2.3
+(two-bus AC power flow), EE-3.2 (line models) and EE-3.3 (transformers and the Y-bus) — and Module 03's
+LP duality for nodal prices. Setup: `pip install -r requirements.txt` from the repo root. The week-15
+checkpoint: **your own Newton–Raphson matches pandapower to 10⁻⁸ p.u., and you can explain how the DC
+approximation differs.** [`power_flow.md`](power_flow.md) is a reading guide with textbook references.
 
+| Lesson | Topic | Status |
+|---|---|---|
+| `01_newton_raphson_power_flow` | The AC power flow equations for many buses, your own Newton–Raphson in polar form checked against pandapower to 10⁻⁸ on the IEEE 14-bus system, quadratic convergence, losses and the slack, the loadability limit (and, in the exercise, generator reactive limits) | ready |
+| 2 · other solution methods | Gauss–Seidel and the fast decoupled load flow: cost per iteration versus number of iterations | planned |
+| 3 · the DC approximation | DC power flow derived and tested against AC, PyPSA `pf()` and `lpf()` against pandapower | planned |
+| 4 · congestion and nodal prices | PTDFs, line limits in the dispatch LP, locational marginal prices and congestion rent | planned |
+| 5 · market coupling | Zones versus nodes, net transfer capacities, flow-based allocation | planned |
+| 6 · redispatch and N-1 | Security-constrained dispatch, contingency analysis, redispatch cost | planned |
+| 7 · voltage and reactive power | Voltage control, reactive reserves, compensation | planned |
+| 8 · frequency and reserves | The swing equation, inertia, reserves; an introduction to dynamic simulation | planned |
+| P4 | Portfolio project: the South-East European network, cross-border flows, AC feasibility | planned |
+
+Each lesson: lecture notebook in this folder, exercises in `exercise/`, answer key in
+`exercise/solutions/` (submit your own answers before opening it).
