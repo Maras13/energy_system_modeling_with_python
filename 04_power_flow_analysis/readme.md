@@ -32,7 +32,7 @@ approximation differs.** [`power_flow.md`](power_flow.md) is a reading guide wit
 | Lesson | Topic | Status |
 |---|---|---|
 | `01_newton_raphson_power_flow` | The AC power flow equations for many buses, your own Newton–Raphson in polar form checked against pandapower to 10⁻⁸ on the IEEE 14-bus system, quadratic convergence, losses and the slack, the loadability limit (and, in the exercise, generator reactive limits) | ready |
-| 2 · other solution methods | Gauss–Seidel and the fast decoupled load flow: cost per iteration versus number of iterations | planned |
+| `02_solution_methods` | Gauss–Seidel with acceleration, the fast decoupled load flow with two matrices factorised once, cost per iteration against number of iterations on networks up to 1,354 buses, where decoupling breaks down (high resistance), the slack-angle trap | ready |
 | 3 · the DC approximation | DC power flow derived and tested against AC, PyPSA `pf()` and `lpf()` against pandapower | planned |
 | 4 · congestion and nodal prices | PTDFs, line limits in the dispatch LP, locational marginal prices and congestion rent | planned |
 | 5 · market coupling | Zones versus nodes, net transfer capacities, flow-based allocation | planned |
